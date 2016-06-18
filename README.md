@@ -1,2 +1,2 @@
-# VillageServer
-A server for the Game Village by @SupressWarnings
+# ToK-Server
+A server for the Game Time of Kings (ToK) by @SupressWarnings
