@@ -1,5 +1,5 @@
 /*
- * Copyright © 2016 | Time of Kings (ToK) Team | All rights reserved.
+ * Copyright © 2016 | Time of Kings (ToK) - GameTeam | All rights reserved.
  * 
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -18,4 +18,5 @@ public interface CommandHandler {
      * Handles the task.
      */
     String handle();
+    
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright © 2016 | Time of Kings (ToK) Team | All rights reserved.
+ * Copyright © 2016 | Time of Kings (ToK) - GameTeam | All rights reserved.
  * 
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -50,6 +50,12 @@ public class CommandHandlerFactory {
         	return new Info();
         } else if(command.equalsIgnoreCase("License")) {
         	return new License();
+        } else if(command.equalsIgnoreCase("stop")) {
+        	return new Stop();
+        } else if(command.equalsIgnoreCase("clear")) {
+        	return new Clear();
+        } else if(command.equalsIgnoreCase("credits")) {
+        	return new Credits();
         }
         
         else {

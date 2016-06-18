@@ -1,5 +1,5 @@
 /*
- * Copyright © 2016 | Time of Kings (ToK) Team | All rights reserved.
+ * Copyright © 2016 | Time of Kings (ToK) - GameTeam | All rights reserved.
  * 
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -22,7 +22,7 @@ import com.github.ToK.ToKserver.configuration.ConfigurationManager;
  * @date Jun 12, 2016
  *
  */
-public class TelnetServer {
+public class TelnetServer implements Runnable {
 
     private final Logger logger = Logger.getLogger(TelnetServer.class.getName());
     private ServerSocket server = null;
@@ -35,14 +35,15 @@ public class TelnetServer {
     /**
      * @param string
      */
+
     public TelnetServer(String port) {
+    	GIVEN_PORT = port != null ? Integer.valueOf(port).intValue() : 0;
+	}
 
-        GIVEN_PORT = port != null ? Integer.valueOf(port).intValue() : 0;
-    }
-
-    /**
+	/**
      * The main method to start the telnet server
      */
+    @Override
     public void run() {
 
         try {

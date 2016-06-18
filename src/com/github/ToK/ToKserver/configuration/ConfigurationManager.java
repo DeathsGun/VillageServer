@@ -1,5 +1,5 @@
 /*
- * Copyright © 2016 | Time of Kings (ToK) Team | All rights reserved.
+ * Copyright © 2016 | Time of Kings (ToK) - GameTeam | All rights reserved.
  * 
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -24,7 +24,7 @@ public enum ConfigurationManager {
 
     INSTANCE;
     private static Properties properties;
-    private final Logger logger = Logger.getLogger(ConfigurationManager.class.getName());
+    private final static Logger logger = Logger.getLogger(ConfigurationManager.class.getName());
     private static boolean FORCE_LOAD_PROPERTIES = Boolean.valueOf(System.getProperty(Constants.FORCE_LOAD))
             .booleanValue();
 
@@ -46,17 +46,29 @@ public enum ConfigurationManager {
      * 
      * @return
      */
-    public int getPort() {
+    public static int getPort() {
         if (FORCE_LOAD_PROPERTIES || properties == null) {
             loadProperties();
         }
         return Integer.valueOf(properties.getProperty(Constants.PORT_NUMBER, Constants.DEFAULT_PORT_NUM));
     }
+    public String getRoot() {
+    	if (FORCE_LOAD_PROPERTIES || properties == null) {
+            loadProperties();
+        }
+        return String.valueOf(properties.getProperty(Constants.ROOT_USER, Constants.ROOT_USER));
+    }
+    public String getRootPass() {
+    	if (FORCE_LOAD_PROPERTIES || properties == null) {
+            loadProperties();
+        }
+        return String.valueOf(properties.getProperty(Constants.ROOT_PASS, Constants.ROOT_PASS));
+    }
 
     /**
      * Load properties only once
      */
-    private void loadProperties() {
+    private static void loadProperties() {
 
         properties = new Properties();
         final String configPath = System.getProperty(Constants.CONFIG_FILE_ENV_PROPERTY);
@@ -77,7 +89,7 @@ public enum ConfigurationManager {
     /**
      * Loads property from class path.
      */
-    private void loadFromClassPath() {
+    private static void loadFromClassPath() {
         try {
             InputStream in = ClassLoader.getSystemResourceAsStream("server.properties");
             if (in != null) {
