@@ -16,10 +16,8 @@ public final class Constants {
 
     public static final String MAX_THREADS = "max.threads";
     public static final String PORT_NUMBER = "port.num";
-    public static final String ROOT_USER = "root.user";
-    public static final String ROOT_PASS = "root.pass";
-    public static final String DEFAULT_ROOT_USER = "root";
-    public static final String DEFAULT_ROOT_PASS = "toor";
+    public static final String ROOT_IP = "root.ip";
+    public static final String DEFAULT_ROOT_IP = "localhost";
     public static final String STATUS = "status";
     public static final String DEFAULT_PORT_NUM = "12667";
     public static final String DEFAULT_MAX_THREADS = "120";

@@ -7,8 +7,6 @@
  */
 package com.github.ToK.ToKserver;
 
-import com.github.ToK.ToKserver.server.Main;
-
 /**
  * @author DeathsGun
  * @date Jun 12, 2016
@@ -23,7 +21,7 @@ public final class Util {
         builder.append("======================================================");
         builder.append(cr);
         builder.append(cr);
-        builder.append("   Willkommen auf dem ToK Server "+Main.version);
+        builder.append("   Willkommen auf dem ToK Server "+System.getProperty("tok.server.version"));
         builder.append(cr);
         builder.append("      Running on "+System.getProperty("os.name"));
         builder.append(cr);

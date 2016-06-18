@@ -52,19 +52,12 @@ public enum ConfigurationManager {
         }
         return Integer.valueOf(properties.getProperty(Constants.PORT_NUMBER, Constants.DEFAULT_PORT_NUM));
     }
-    public String getRoot() {
+    public static String getRootIP() {
     	if (FORCE_LOAD_PROPERTIES || properties == null) {
             loadProperties();
         }
-        return String.valueOf(properties.getProperty(Constants.ROOT_USER, Constants.ROOT_USER));
+        return String.valueOf(properties.getProperty(Constants.ROOT_IP, Constants.ROOT_IP));
     }
-    public String getRootPass() {
-    	if (FORCE_LOAD_PROPERTIES || properties == null) {
-            loadProperties();
-        }
-        return String.valueOf(properties.getProperty(Constants.ROOT_PASS, Constants.ROOT_PASS));
-    }
-
     /**
      * Load properties only once
      */

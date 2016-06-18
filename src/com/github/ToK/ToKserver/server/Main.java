@@ -13,8 +13,6 @@ package com.github.ToK.ToKserver.server;
  *
  */
 public class Main {
-	
-	public static double version = 1.0;
 	public static boolean isRoot = false;
 	public static String IP = null;
 	public static String ae = "\u00e4"; // Klein
@@ -26,6 +24,11 @@ public class Main {
 	public static String ss = "\u00df";
 	public static Thread server;
     public static void main(String[] args) {
+    	System.setProperty("tok.server.url", "https://github.com/ToK-Gameteam/ToK-Server");
+    	System.setProperty("tok.client.url", "https://github.com/ToK-Gameteam/Time-of-Kings");
+    	System.setProperty("tok.client.version", "0.2");
+    	System.setProperty("tok.server.version", "0.2");
+    	System.setProperty("tok.vendor", "Time of Kings Gameteam");
     	server = new Thread(new TelnetServer(args.length == 0 ? null : args[0]));
     	server.start();
     }

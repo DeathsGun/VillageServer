@@ -20,6 +20,7 @@ import com.github.ToK.ToKserver.Util;
 import com.github.ToK.ToKserver.command.CommandHandler;
 import com.github.ToK.ToKserver.command.CommandHandlerFactory;
 import com.github.ToK.ToKserver.command.Ende;
+import com.github.ToK.ToKserver.configuration.ConfigurationManager;
 
 /**
  * 
@@ -55,8 +56,8 @@ public class ClientWorker implements Runnable {
             InetAddress IP = InetAddress.getLocalHost();
             String ip = IP.getHostAddress();
             Main.IP = hostAddr;
-            if(ip == hostAddr) {
-            	System.out.println("Connected with localhost giving root rights!");
+            if(ip == hostAddr || ip == ConfigurationManager.getRootIP() || "localhost" == ConfigurationManager.getRootIP() || "127.0.0.1" == ConfigurationManager.getRootIP()) {
+            	out.println("Hallo, Root!");
             	Main.isRoot = true;
             } else {
             	Main.isRoot = true;
