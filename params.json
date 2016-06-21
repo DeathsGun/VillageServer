@@ -1,0 +1,6 @@
+{
+  "name": "Time of Kings Server",
+  "tagline": "A server for Time of Kings",
+  "body": "#ToK-Server\r\nEin Server für das Spiel Time of Kings vom ToK GameTeam\r\n#Status\r\n\r\n- [X] Spielstand speichern\r\n- [X] Spielstand laden\r\n- [X] Infos über den Server abrufen\r\n- [X] Spieler erstellen\r\n- [ ] Gebäude bauen\r\n- [ ] Chatten\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
