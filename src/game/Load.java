@@ -1,10 +1,5 @@
 package game;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-
-import com.github.ToK.server.main.Main;
-
 /**
  * Class Load
  * 
@@ -13,6 +8,9 @@ import com.github.ToK.server.main.Main;
  * @author Constantin Schulte
  * @version 0.0
  */
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 abstract class LoadAdmin {
 	public static Admin[] main(){
@@ -23,7 +21,7 @@ abstract class LoadAdmin {
 
 	public static Admin[] load(){
 		Admin[] admin = new Admin[1];
-		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("player_"+Main.IP+".bin"))){
+		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("admin.bin"))){
 			admin[0] =  (Admin) in.readObject();
 			System.out.println("Laden erfolgreich");
 		}catch(Exception e){
@@ -42,7 +40,7 @@ abstract class LoadPlayer {
 
 	public static NormalPlayer[] load(){
 		NormalPlayer[] player = new NormalPlayer[1];
-		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("player_"+Main.IP+".bin"))){
+		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("player.bin"))){
 			player[0] =  (NormalPlayer) in.readObject();
 			System.out.println("Laden erfolgreich");
 		}catch(Exception e){

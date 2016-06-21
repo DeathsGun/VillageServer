@@ -1,12 +1,11 @@
 package game.buildings;
 
-import game.Building;
 import game.Location;
 
 /**
  * 
  */
-class Wall extends Building {
+public class Wall extends Building {
 
 	private static final long serialVersionUID = 1L;
 

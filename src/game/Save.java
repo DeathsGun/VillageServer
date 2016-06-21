@@ -1,10 +1,5 @@
 package game;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-
-import com.github.ToK.server.main.Main;
-
 /**
  *  Class Save
  *  
@@ -14,9 +9,12 @@ import com.github.ToK.server.main.Main;
  *  @version 0.0
  */
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
 abstract class SaveAdmin {
 	public static void save(Admin adminToSave){
-		  try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("player_"+Main.IP+".bin"))){
+		  try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("admin.bin"))){
 			  out.writeObject(adminToSave);
 			  System.out.println("Speichern erfolgreich");
 		  }catch(Exception e){
@@ -27,7 +25,7 @@ abstract class SaveAdmin {
 
 abstract class SavePlayer {
 	public static void save(NormalPlayer playerToSave){
-		  try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("player_"+Main.IP+".bin"))){
+		  try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("player.bin"))){
 			  out.writeObject(playerToSave);
 			  System.out.println("Speichern erfolgreich");
 		  }catch(Exception e){

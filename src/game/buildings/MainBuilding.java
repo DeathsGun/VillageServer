@@ -1,6 +1,5 @@
 package game.buildings;
 
-import game.Building;
 import game.Location;
 
 public class MainBuilding extends Building {

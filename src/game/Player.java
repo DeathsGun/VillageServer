@@ -12,11 +12,11 @@ import java.io.Serializable;
  * @author Constantin Schulte
  * @version 0.0
  **/
-public abstract class Player implements Serializable{
+abstract class Player implements Serializable{
 	private static final long serialVersionUID = 1L;
 	protected String name;
 	  protected final int playerID;
-	  public static Distributor distributor;
+	  protected Distributor distributor;
 
 	  public Player(String name){
 	    if(name.length() >= 3 && name.length() <= 16){
@@ -34,6 +34,7 @@ public abstract class Player implements Serializable{
 	    }
 	    playerID = (int) (Math.random() * 100_000);
 	    distributor = new Distributor();
+	    Tutorial.startTutorial(distributor);
 	  }
 
 	  public void printDetails(){
@@ -63,6 +64,10 @@ public abstract class Player implements Serializable{
 	  
 	  public void buildApartment( Location location){
 		  distributor.buildApartment(location);
+	  }
+	  
+	  public void buildWall( Location location ){
+		  distributor.buildWall(location);
 	  }
 	  
 	  public void moveBuilding(String building, int number, Location location){
